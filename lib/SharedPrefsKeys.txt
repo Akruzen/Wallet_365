@@ -1,0 +1,6 @@
+1. currentBalanceInt: Stores the value of current balance
+2. selectedDateTemp: Stores the String value of date when user has selected a date but hasn't clicked saved
+3. selectedDate: Stores the String value of saved salary date
+4. currSalary: Stores the String value of saved Salary
+5. currUsername: Stores the current Username
+6. isDarkTheme: Stores the current Theme
