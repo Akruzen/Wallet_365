@@ -132,7 +132,6 @@ class AboutPage extends StatelessWidget {
                               children: [
                                 Center(
                                   child: CircleAvatar(
-                                    // backgroundImage: AssetImage("assets/aditi_profile.png"),
                                     radius: 50.0,
                                   ),
                                 ),
