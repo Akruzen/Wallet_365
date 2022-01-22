@@ -173,46 +173,49 @@ class _SetSalaryDialogState extends State<SetSalaryDialog> {
                 SizedBox(
                   height: 20.0,
                 ),
-                Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(20.0),
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple[100],
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      ),
-                      child: Text(
-                        "Currently Selected:\n" + "$selectedDate".split(" ")[0],
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: "Livvic",
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(20.0),
+                        decoration: BoxDecoration(
+                          color: Colors.deepPurple[100],
+                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
                         ),
-                        textAlign: TextAlign.center,
+                        child: Text(
+                          "Currently Selected:\n" + "$selectedDate".split(" ")[0],
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: "Livvic",
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 20.0,
-                    ),
-                    Container(
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          _selectDate(context);
-                          setState(() {
+                      SizedBox(
+                        width: 20.0,
+                      ),
+                      Container(
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            _selectDate(context);
+                            setState(() {
 
-                          });
-                        },
-                        icon: Icon(Icons.date_range_sharp, color: Colors.black),
-                        label: Text("Set Date", style: TextStyle(color: Colors.black),),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.amber[100],
-                          padding: EdgeInsets.all(30.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          )
+                            });
+                          },
+                          icon: Icon(Icons.date_range_sharp, color: Colors.black),
+                          label: Text("Set Date", style: TextStyle(color: Colors.black),),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.amber[100],
+                            padding: EdgeInsets.all(30.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            )
+                          ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),

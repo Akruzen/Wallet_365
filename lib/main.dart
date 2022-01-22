@@ -1,6 +1,3 @@
-import 'dart:html';
-import 'dart:js';
-
 import 'package:finance_app/3buttons.dart';
 import 'package:finance_app/AboutPage.dart';
 import 'package:finance_app/AddBalanceDialog.dart';
@@ -221,163 +218,165 @@ class _HomeState extends State<Home> {
         },
         child: SingleChildScrollView(
           physics: AlwaysScrollableScrollPhysics(),
-          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(20.0),
-                    padding: EdgeInsets.symmetric(
-                        vertical: 20.0, horizontal: 50.0),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.deepPurple,
-                        width: 2.5,
-                      ),
-                      color: Theme.of(context).backgroundColor,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                    child: Text(
-                      "Hello" + "$username",
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Livvic",
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(20.0),
-                    padding: EdgeInsets.symmetric(
-                        vertical: 20.0, horizontal: 20.0),
-                    decoration: BoxDecoration(
-                      color: Colors.blueGrey[800],
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                    child: Text(
-                      "Balance:\n₹ $currentBalance",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Livvic",
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(20.0),
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext ctx) =>
-                              AddBalanceDialog(currentBalance, updateBalance),
-                        );
-                      },
-                      icon: Icon(Icons.add, color: Colors.black,),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.amber[200],
-                        padding: EdgeInsets.symmetric(
-                            vertical: 20.0, horizontal: 50.0),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                        ),
-                      ),
-                      label: Text(
-                        "Add",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Livvic",
-                          fontSize: 15.0,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(20.0),
-                    child: ElevatedButton.icon(
-                      onPressed: () {
-                        DateTime selectedDate = DateTime.now();
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext ctx) =>
-                              SetSalaryDialog(),
-                        );
-                      },
-                      icon: Icon(Icons.edit, color: Colors.black,),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.amber[200],
-                        padding: EdgeInsets.symmetric(
-                            vertical: 20.0, horizontal: 50.0),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                        ),
-                      ),
-                      label: Text(
-                        "Set",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: "Livvic",
-                          fontSize: 15.0,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                width: 300.0,
-                margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
-                padding: EdgeInsets.symmetric(horizontal: 100.0, vertical: 10.0),
-                decoration: BoxDecoration(
-                  color: Colors.amber[300],
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0),
-                    topRight: Radius.circular(20.0),),
-                ),
-                child: Column(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Pie Chart",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Livvic",
-                        fontSize: 15.0,
-                        letterSpacing: 1.5,
+                    Container(
+                      margin: EdgeInsets.all(20.0),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 20.0, horizontal: 50.0),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.deepPurple,
+                          width: 2.5,
+                        ),
+                        color: Theme.of(context).backgroundColor,
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: Text(
+                        "Hello" + "$username",
+                        style: TextStyle(
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Livvic",
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(20.0),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 20.0, horizontal: 20.0),
+                      decoration: BoxDecoration(
+                        color: Colors.blueGrey[800],
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: Text(
+                        "Balance:\n₹ $currentBalance",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Livvic",
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.all(20.0),
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext ctx) =>
+                                AddBalanceDialog(currentBalance, updateBalance),
+                          );
+                        },
+                        icon: Icon(Icons.add, color: Colors.black,),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.amber[200],
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20.0, horizontal: 50.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          ),
+                        ),
+                        label: Text(
+                          "Add",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Livvic",
+                            fontSize: 15.0,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(20.0),
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          DateTime selectedDate = DateTime.now();
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext ctx) =>
+                                SetSalaryDialog(),
+                          );
+                        },
+                        icon: Icon(Icons.edit, color: Colors.black,),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.amber[200],
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20.0, horizontal: 50.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          ),
+                        ),
+                        label: Text(
+                          "Set",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Livvic",
+                            fontSize: 15.0,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
                       ),
                     ),
                   ],
                 ),
-              ),
-              Container(
-                width: 300.0,
-                height: 200.0,
-                padding: EdgeInsets.symmetric(horizontal: 100.0, vertical: 10.0),
-                decoration: BoxDecoration(
-                  color: Colors.blueGrey[50],
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20.0),
-                    bottomRight: Radius.circular(20.0),),
+                Container(
+                  width: 350.0,
+                  margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+                  padding: EdgeInsets.symmetric(horizontal: 100.0, vertical: 10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.amber[300],
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0),
+                      topRight: Radius.circular(20.0),),
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Pie Chart",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Livvic",
+                          fontSize: 15.0,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                child: barChart(),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-            ],
+                Container(
+                  width: 350.0,
+                  height: 300.0,
+                  padding: EdgeInsets.symmetric(horizontal: 100.0, vertical: 10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey[50],
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20.0),
+                      bottomRight: Radius.circular(20.0),),
+                  ),
+                  child: barChart(),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+              ],
+            ),
           ),
         ),
       ),

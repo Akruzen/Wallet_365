@@ -16,9 +16,9 @@ class _analysisState extends State<analysis> {
   String cat='';
   bool enabled=true;
   bool show=false;
-   Widget chart=Container();
+  Widget chart=Container();
   String subcat='';
-   DateTime initial=DateTime.now();
+  DateTime initial=DateTime.now();
   DateTime endDate=DateTime.now();
   Future<void> _selectmonth(BuildContext context)async{
     final DateTime? picked =await showMonthPicker(context:context,
@@ -209,7 +209,7 @@ class _analysisState extends State<analysis> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.amber[200],
                       padding: EdgeInsets.symmetric(
-                          vertical: 20.0, horizontal: 50.0),
+                          vertical: 20.0, horizontal: 20.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
@@ -251,7 +251,7 @@ class _analysisState extends State<analysis> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.amber[200],
                       padding: EdgeInsets.symmetric(
-                          vertical: 20.0, horizontal: 50.0),
+                          vertical: 20.0, horizontal: 20.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       ),
