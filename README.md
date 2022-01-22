@@ -1,6 +1,7 @@
 # finance_app
+Developed a mobile app in flutter for management of everyday expenses which keeps track of all the expenses and categorizes them for visual representation in form of different graphs and charts. The app included a feature which helps to split a specified amount in different percent.
 
-A new Flutter application.
+APK Link: https://drive.google.com/file/d/1KVaEgORzxWMq8YyAzeYp0B3IOot6xUka/view?usp=sharing
 
 ## Getting Started
 
